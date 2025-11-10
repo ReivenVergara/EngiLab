@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -20,85 +19,84 @@
       <a href="voltage.html">Voltage Tools</a>
     </nav>
   </header>
-<main class="center">
-  <section class="hero fade-up">
-    <h2 class="main-title">Resistor Color Code Decoder</h2>
-    <p>Choose the color bands below to identify the resistor value.</p>
-  </section>
 
-  <section id="resistor-decoder" class="features fade-up">
-    <!-- SVG Resistor Drawing -->
-    <svg id="resistor-svg" width="300" height="80" viewBox="0 0 300 80">
-      <rect x="10" y="30" width="200" height="25" rx="10" ry="10" fill="#3399ff" stroke="#222" stroke-width="2"/>
-      <!-- Color Bands -->
-      <rect class="band" id="band1-svg" x="50" y="25" width="15" height="30" rx="3" ry="3" fill="lightgray"/>
-      <rect class="band" id="band2-svg" x="90" y="25" width="15" height="30" rx="3" ry="3" fill="lightgray"/>
-      <rect class="band" id="band3-svg" x="130" y="25" width="15" height="30" rx="3" ry="3" fill="lightgray"/>
-      <rect class="band" id="band4-svg" x="170" y="25" width="15" height="30" rx="3" ry="3" fill="lightgray"/>
-    </svg>
+  <main class="center">
+    <section class="hero fade-up">
+      <h2 class="main-title">Resistor Color Code Decoder</h2>
+      <p>Choose the color bands below to identify the resistor value.</p>
+    </section>
 
-    <!-- Band Selectors -->
-    <div class="selectors">
-      <select id="band1-select">
-        <option value="">Band 1</option>
-        <option value="black">Black</option>
-        <option value="brown">Brown</option>
-        <option value="red">Red</option>
-        <option value="orange">Orange</option>
-        <option value="yellow">Yellow</option>
-        <option value="green">Green</option>
-        <option value="blue">Blue</option>
-        <option value="violet">Violet</option>
-        <option value="gray">Gray</option>
-        <option value="white">White</option>
-      </select>
+    <section id="resistor-decoder" class="features fade-up">
+  <!-- SVG Resistor Drawing -->
+  <svg id="resistor-svg" width="300" height="80" viewBox="0 0 300 80">
+    <rect x="10" y="30" width="200" height="25" rx="10" ry="10" fill="#add8e6" stroke="#222" stroke-width="2"/>
+    <!-- Color Bands -->
+    <rect class="band" id="band1" x="50" y="25" width="15" height="30" rx="3" ry="3" fill="lightgray"/>
+    <rect class="band" id="band2" x="90" y="25" width="15" height="30" rx="3" ry="3" fill="lightgray"/>
+    <rect class="band" id="band3" x="130" y="25" width="15" height="30" rx="3" ry="3" fill="lightgray"/>
+    <rect class="band" id="band4" x="170" y="25" width="15" height="30" rx="3" ry="3" fill="lightgray"/>
+  </svg>
 
-      <select id="band2-select">
-        <option value="">Band 2</option>
-        <option value="black">Black</option>
-        <option value="brown">Brown</option>
-        <option value="red">Red</option>
-        <option value="orange">Orange</option>
-        <option value="yellow">Yellow</option>
-        <option value="green">Green</option>
-        <option value="blue">Blue</option>
-        <option value="violet">Violet</option>
-        <option value="gray">Gray</option>
-        <option value="white">White</option>
-      </select>
+  <!-- Band Selectors -->
+  <div class="selectors">
+    <select id="band1-select">
+      <option value="">Band 1</option>
+      <option value="black">Black</option>
+      <option value="brown">Brown</option>
+      <option value="red">Red</option>
+      <option value="orange">Orange</option>
+      <option value="yellow">Yellow</option>
+      <option value="green">Green</option>
+      <option value="blue">Blue</option>
+      <option value="violet">Violet</option>
+      <option value="gray">Gray</option>
+      <option value="white">White</option>
+    </select>
 
-      <select id="band3-select">
-        <option value="">Multiplier</option>
-        <option value="black">Black</option>
-        <option value="brown">Brown</option>
-        <option value="red">Red</option>
-        <option value="orange">Orange</option>
-        <option value="yellow">Yellow</option>
-        <option value="green">Green</option>
-        <option value="blue">Blue</option>
-        <option value="gold">Gold</option>
-        <option value="silver">Silver</option>
-      </select>
+    <select id="band2-select">
+      <option value="">Band 2</option>
+      <option value="black">Black</option>
+      <option value="brown">Brown</option>
+      <option value="red">Red</option>
+      <option value="orange">Orange</option>
+      <option value="yellow">Yellow</option>
+      <option value="green">Green</option>
+      <option value="blue">Blue</option>
+      <option value="violet">Violet</option>
+      <option value="gray">Gray</option>
+      <option value="white">White</option>
+    </select>
 
-      <select id="band4-select">
-        <option value="">Tolerance</option>
-        <option value="brown">Brown (±1%)</option>
-        <option value="red">Red (±2%)</option>
-        <option value="green">Green (±0.5%)</option>
-        <option value="blue">Blue (±0.25%)</option>
-        <option value="violet">Violet (±0.1%)</option>
-        <option value="gray">Gray (±0.05%)</option>
-        <option value="gold">Gold (±5%)</option>
-        <option value="silver">Silver (±10%)</option>
-      </select>
-    </div>
+    <select id="band3-select">
+      <option value="">Multiplier</option>
+      <option value="black">Black</option>
+      <option value="brown">Brown</option>
+      <option value="red">Red</option>
+      <option value="orange">Orange</option>
+      <option value="yellow">Yellow</option>
+      <option value="green">Green</option>
+      <option value="blue">Blue</option>
+      <option value="gold">Gold</option>
+      <option value="silver">Silver</option>
+    </select>
 
-    <!-- Resistance Value -->
-    <div class="result fade-up">
-      <h3>Resistance Value:</h3>
-      <p id="res-value">-- Ω</p>
-    </div>
-    <script src="resistor.js" defer></script>
+    <select id="band4-select">
+      <option value="">Tolerance</option>
+      <option value="brown">Brown (±1%)</option>
+      <option value="red">Red (±2%)</option>
+      <option value="green">Green (±0.5%)</option>
+      <option value="blue">Blue (±0.25%)</option>
+      <option value="violet">Violet (±0.1%)</option>
+      <option value="gray">Gray (±0.05%)</option>
+      <option value="gold">Gold (±5%)</option>
+      <option value="silver">Silver (±10%)</option>
+    </select>
+  </div>
 
-  </section>
-</main>
+  <!-- Resistance Value -->
+  <div class="result fade-up">
+    <h3>Resistance Value:</h3>
+    <p id="res-value">-- Ω</p>
+  </div>
+</section>
+<script src="resistor.js" defer></script>
