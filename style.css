@@ -1,0 +1,494 @@
+/* === EngiLab Playful Theme (Light Mode, Centered) === */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  }
+
+body {
+  /* Sunset image with soft overlay */
+  background: 
+   linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), /* lighter overlay */ 
+    url('images/sunset.jpg') no-repeat center center / cover;
+  color: #fff; /* white-ish text for contrast */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  transition: background 0.4s ease;
+  
+}
+
+/* === Navbar === */
+.navbar {
+width: 100%;
+display: flex;
+justify-content: space-between;
+align-items: center;
+background: #ffb84d;
+padding: 0.8rem 1.5rem;
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+position: sticky;
+top: 0;
+z-index: 10;
+}
+
+.navbar .logo {
+display: flex;
+align-items: center;
+gap: 8px;
+color: #222;
+cursor: pointer;
+animation: bounce 2s infinite;
+}
+
+.navbar nav {
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+}
+
+.navbar nav a {
+color: #222;
+text-decoration: none;
+margin: 0 10px;
+font-weight: 600;
+position: relative;
+transition: color 0.3s ease;
+}
+
+.navbar nav a.active,
+.navbar nav a:hover {
+color: #ff6600;
+}
+
+.navbar nav a::after {
+content: "";
+position: absolute;
+width: 0%;
+height: 2px;
+background: #ff6600;
+bottom: -4px;
+left: 0;
+transition: 0.3s ease;
+}
+
+.navbar nav a:hover::after,
+.navbar nav a.active::after {
+width: 100%;
+}
+
+/* === Main Layout (Centered on all pages) === */
+main.center {
+flex: 1;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+text-align: center;
+padding: 2rem;
+width: 100%;
+animation: fadeUp 1s ease;
+}
+
+.hero {
+width: 100%;
+max-width: 800px;
+margin: 0 auto 2rem;
+}
+
+.main-title {
+font-size: 2.8rem;
+color: #222;
+text-shadow: 0 2px 10px rgba(255, 153, 0, 0.2);
+transition: transform 0.3s ease;
+}
+
+.main-title span {
+  color: #ff6600;
+  font-weight: 700;
+  -webkit-text-stroke: 1px #000; /* black border */
+}
+
+
+.main-title:hover {
+transform: scale(1.03);
+}
+
+.tagline {
+font-size: 1.1rem;
+margin: 0.8rem 0 1.2rem;
+color: #555;
+}
+
+.hero-btn {
+background: #ff6600;
+color: #fff;
+padding: 0.8rem 1.8rem;
+border-radius: 12px;
+text-decoration: none;
+font-weight: 600;
+box-shadow: 0 4px 15px rgba(255, 102, 0, 0.3);
+transition: transform 0.25s ease, box-shadow 0.3s ease;
+}
+
+.hero-btn:hover {
+transform: scale(1.05);
+box-shadow: 0 6px 20px rgba(255, 102, 0, 0.4);
+}
+
+/* === Features === */
+.features {
+width: 100%;
+max-width: 1100px;
+margin: 0 auto;
+text-align: center;
+}
+
+.section-title {
+font-size: 1.8rem;
+color: #222;
+margin-bottom: 1.5rem;
+}
+
+.feature-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+gap: 1.5rem;
+justify-items: center;
+padding: 1rem;
+}
+
+.feature-card {
+background: #ffffff;
+border-radius: 15px;
+padding: 1.5rem;
+box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+text-align: center;
+width: 90%;
+max-width: 340px;
+}
+
+.feature-card:hover {
+transform: translateY(-6px) scale(1.03);
+background: #fff4e6;
+box-shadow: 0 10px 20px rgba(255, 102, 0, 0.3);
+}
+
+.feature-card h4 {
+color: #ff6600;
+margin-bottom: 0.6rem;
+}
+
+.feature-card p {
+color: #555;
+line-height: 1.5;
+}
+
+/* === Footer === */
+footer {
+background: #ffb84d;
+color: #222;
+text-align: center;
+padding: 1rem;
+font-size: 0.9rem;
+box-shadow: 0 -3px 8px rgba(0, 0, 0, 0.08);
+}
+
+footer span {
+color: #ff6600;
+font-weight: 700;
+}
+
+/* === Animations === */
+@keyframes bounce {
+0%, 100% {
+transform: translateY(0);
+}
+50% {
+transform: translateY(-6px);
+}
+}
+
+@keyframes fadeUp {
+from {
+opacity: 0;
+transform: translateY(20px);
+}
+to {
+opacity: 1;
+transform: translateY(0);
+}
+}
+
+/* === Responsiveness === */
+@media (max-width: 768px) {
+.navbar {
+flex-direction: column;
+text-align: center;
+}
+
+.navbar nav {
+margin-top: 10px;
+}
+
+.main-title {
+font-size: 2rem;
+}
+
+.feature-grid {
+grid-template-columns: 1fr;
+}
+
+.feature-card {
+max-width: 90%;
+}
+}
+
+/* === Resistor SVG Styling === */
+#resistor-decoder svg {
+  margin: 1.5rem 0;
+}
+
+#resistor-decoder .band {
+  transition: fill 0.3s ease;
+}
+
+#resistor-decoder .selectors {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin: 1rem 0;
+}
+
+#resistor-decoder select {
+  padding: 0.5rem 0.8rem;
+  border-radius: 8px;
+  border: 1px solid #000000;
+  font-weight: 500;
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+#resistor-decoder select:hover {
+  transform: scale(1.04);
+}
+
+#resistor-decoder .result {
+  margin-top: 1rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #ff6600;
+}
+
+/* Voltage Calculator Section */
+#voltage-calculator {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* center horizontally */
+  justify-content: center; /* optional: center vertically if you want */
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 500px; /* optional, limit width */
+  margin: 0 auto; /* center in the page */
+}
+
+/* Input Card Styling */
+.input-card {
+  background: #fff4e6; /* soft orange */
+  padding: 1.5rem 2rem;
+  border-radius: 15px;
+  box-shadow: 0 6px 18px rgba(255, 102, 0, 0.2);
+  width: 100%; /* full width of parent */
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.input-card label {
+  font-weight: 600;
+  color:#000;
+}
+
+.input-card input {
+  padding: 0.6rem 0.8rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.input-card button {
+  margin-top: 1rem;
+  align-self: center;
+}
+
+
+/* === Components Centered Cards === */
+#components-list .feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  justify-items: center;
+  padding: 1rem;
+}
+
+#components-list .feature-card {
+  background: #000000;
+  border-radius: 15px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  text-align: center;
+  max-width: 250px;
+}
+
+#components-list .feature-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  background: #000000;
+  box-shadow: 0 10px 20px rgba(255,102,0,0.3);
+}
+
+#components-list .feature-card h4 {
+  color: #ff6600;
+  margin-top: 0.8rem;
+  margin-bottom: 0.6rem;
+}
+
+#components-list .feature-card p {
+  color: #000000;
+  line-height: 1.4;
+  font-size: 0.95rem;
+}
+
+/* Component card images */
+.component-card {
+  background: #000000;
+  border-radius: 15px;
+  padding: 1rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.component-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 10px 20px rgba(255,102,0,0.3);
+}
+
+.component-img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  margin-bottom: 0.5rem;
+  transition: transform 0.25s ease;
+}
+
+.component-card:hover .component-img {
+  transform: scale(1.1);
+}
+
+/* Lightbox overlay */
+#img-overlay {
+  position: fixed;
+  top:0; left:0;
+  width: 100%; height:100%;
+  background: rgba(0,0,0,0.8);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+#img-overlay img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 12px;
+  box-shadow: 0 6px 25px rgba(0,0,0,0.5);
+  transition: transform 0.3s ease;
+}
+
+.component-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  justify-items: center;
+  margin-top: 1rem;
+}
+
+.component-card {
+  background: #7C444F; /* soft orange background */
+  border-radius: 15px;
+  width: 180px; /* fixed width */
+  height: 240px; /* fixed height */
+  padding: 12px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(255,102,0,0.2);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.component-card img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  margin-bottom: 8px;
+  transition: transform 0.3s ease;
+}
+
+.component-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 25px rgba(255,102,0,0.35);
+}
+
+/* Modal for enlarged card */
+#card-modal {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.75);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+#card-modal .modal-content {
+  background: #7B4019;
+  padding: 2rem;
+  border-radius: 20px;
+  text-align: center;
+  max-width: 400px;
+  max-height: 500px;
+  overflow: auto;
+}
+
+#card-modal img {
+  width: 200px;
+  height: 200px;
+  margin-bottom: 1rem;
+}
+
+h3{
+  color:#E7D283;
+  font-weight: 700;
+}
+
+.diagram-card img {
+  max-width: 100%;       /* scale down on smaller screens */
+  width: 300px;          /* default width */
+  height: auto;          /* keep aspect ratio */
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  display: block;
+  margin: 0 auto;        /* center horizontally */
+  transition: transform 0.3s ease;
+}
+
+.diagram-card img:hover {
+  transform: scale(1.05); /* subtle zoom on hover */
+}

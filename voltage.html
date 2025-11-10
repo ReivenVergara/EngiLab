@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EngiLab - Voltage Divider Calculator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo bounce">
+      <span class="gear">⚙️</span>
+      <h1>EngiLab</h1>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="components.html">Basic Components</a>
+      <a href="resistor.html">Resistor Decoder</a>
+      <a href="voltage.html" class="active">Voltage Tools</a>
+    </nav>
+  </header>
+
+  <main class="center">
+    <section class="hero fade-up">
+      <h2 class="main-title">Voltage Divider Calculator</h2>
+      <p>Enter your values below to find the output voltage of your circuit.</p>
+    </section>
+
+    <section id="voltage-calculator" class="features fade-up">
+      <!-- Input Card -->
+      <div class="input-card">
+        <label for="vin">Input Voltage (V):</label>
+        <input type="number" id="vin" placeholder="e.g., 12" />
+
+        <label for="r1">Resistor R1 (Ω):</label>
+        <input type="number" id="r1" placeholder="e.g., 1000" />
+
+        <label for="r2">Resistor R2 (Ω):</label>
+        <input type="number" id="r2" placeholder="e.g., 2000" />
+
+        <button id="calc-btn" class="hero-btn">Calculate</button>
+      </div>
+
+      <!-- Output Card -->
+      <div class="result-card fade-up">
+        <h3>Output Voltage (Vout):</h3>
+        <p id="vout">-- V</p>
+      </div>
+
+      <!-- Diagram Card -->
+      <div class="diagram-card fade-up">
+        <img src="images/Voltage-divider.png" alt="Voltage Divider Diagram" />
+        <p><small>Formula: Vout = Vin × (R2 / (R1 + R2))</small></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 EngiLab by Reiven | Made for Computer Engineering Students</p>
+  </footer>
+
+  <script src="voltage.js" defer></script>
+</body>
+</html>
